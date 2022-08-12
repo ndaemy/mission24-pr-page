@@ -1,11 +1,15 @@
 import { Center, Heading } from "@chakra-ui/react";
 import type { NextPage } from "next";
+import Header from "~components/Header";
 
 const Home: NextPage = () => {
   return (
-    <Center bg="tomato" h="100px" color="white">
-      <Heading>Hello</Heading>
-    </Center>
+    <>
+      <Header />
+      <Center bg="tomato" h="100px" color="white">
+        <Heading>Hello</Heading>
+      </Center>
+    </>
   );
 };
 
