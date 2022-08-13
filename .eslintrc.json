@@ -4,7 +4,7 @@
     "es2021": true,
     "node": true
   },
-  "extends": ["next/core-web-vitals", "plugin:react/recommended", "airbnb", "prettier"],
+  "extends": ["plugin:react/recommended", "airbnb", "prettier"],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "ecmaFeatures": {
@@ -17,7 +17,13 @@
   "rules": {
     "@typescript-eslint/consistent-type-imports": "error",
     "arrow-body-style": ["error", "always"],
-    "import/extensions": ["error", "never"],
+    "import/extensions": [
+      "error",
+      "never",
+      {
+        "svg": "always"
+      }
+    ],
     "import/order": [
       "error",
       {
@@ -29,6 +35,7 @@
         }
       }
     ],
+    "import/no-unresolved": "off",
     "react/function-component-definition": [
       "error",
       {
