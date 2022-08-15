@@ -1,7 +1,7 @@
 import { Button, Flex } from "@chakra-ui/react";
 import type { FC } from "react";
 
-import Logo from "~images/logo_w.svg";
+import Logo from "~/images/logo_w.svg";
 
 const Header: FC = () => {
   return (
