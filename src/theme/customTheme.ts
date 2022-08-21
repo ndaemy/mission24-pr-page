@@ -1,11 +1,17 @@
 import { extendTheme, type ChakraTheme, type ThemeConfig } from "@chakra-ui/react";
 
-const colors = {
+export const colors = {
   mission24: {
     main: {
       800: "rgba(249, 226, 185, 0.8)",
       solid: "#ddcd8d",
       timelineBg: "rgba(221, 205, 141, 0.8)",
+    },
+    univ: {
+      mju: "#8cc9d7",
+      eulji: "#fff598",
+      hufs: "#cbacd0",
+      erica: "#aed291",
     },
   },
 };
