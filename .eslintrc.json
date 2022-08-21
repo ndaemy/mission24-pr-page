@@ -16,7 +16,7 @@
   "plugins": ["react", "@typescript-eslint", "import"],
   "rules": {
     "@typescript-eslint/consistent-type-imports": "error",
-    "arrow-body-style": ["error", "always"],
+    "arrow-body-style": "off",
     "import/extensions": [
       "error",
       "never",

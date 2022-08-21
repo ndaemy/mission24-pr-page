@@ -17,7 +17,7 @@ const StartSection: FC = () => {
         연합 해커톤
       </Heading>
       <img src="https://via.placeholder.com/278x204" alt="letter placeholder" />
-      <Heading as="h2" size="md" fontWeight="bold" textAlign="center" lineHeight="36px">
+      <Heading as="h2" size="md" fontWeight="bold" lineHeight="36px">
         INVITATION LETTER
         <br />
         2022.08.27 MARU180 EVENT HALL

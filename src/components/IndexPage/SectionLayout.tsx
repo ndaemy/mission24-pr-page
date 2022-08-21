@@ -16,6 +16,7 @@ const SectionLayout: FC<SectionLayoutProps> = ({ gap, id, children }) => {
       justifyContent="center"
       height="100vh"
       gap={gap}
+      textAlign="center"
     >
       {children}
     </Flex>
