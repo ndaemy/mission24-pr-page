@@ -1,6 +1,7 @@
 import { Box, Button, Heading } from "@chakra-ui/react";
 import type { FC } from "react";
 
+import Letter from "~/images/letter.svg";
 import Logo from "~/images/logo_w.svg";
 
 import SectionLayout from "./SectionLayout";
@@ -16,7 +17,7 @@ const StartSection: FC = () => {
         <br />
         연합 해커톤
       </Heading>
-      <img src="https://via.placeholder.com/278x204" alt="letter placeholder" />
+      <Letter width="240px" />
       <Heading as="h2" size="md" fontWeight="bold" lineHeight="36px">
         INVITATION LETTER
         <br />
