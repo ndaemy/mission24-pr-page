@@ -9,8 +9,10 @@ const Header: FC = () => {
       position="fixed"
       width="100vw"
       height="60px"
+      backgroundColor="black"
       px={["24px", "36px"]}
       justifyContent="center"
+      zIndex={10}
     >
       <Flex justifyContent="space-between" alignItems="center" maxWidth="1140px" width="100%">
         <Logo height="16px" />
