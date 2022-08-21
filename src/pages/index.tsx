@@ -6,6 +6,7 @@ import InformationSection from "~/components/IndexPage/InformationSection";
 import ShareSection from "~/components/IndexPage/ShareSection";
 import SponsorSection from "~/components/IndexPage/SponsorSection";
 import StartSection from "~/components/IndexPage/StartSection";
+import TicketSection from "~/components/IndexPage/TicketSection";
 
 const Home: NextPage = () => {
   return (
@@ -13,6 +14,7 @@ const Home: NextPage = () => {
       <Header />
       <StartSection />
       <InformationSection />
+      <TicketSection />
       <SponsorSection />
       <ShareSection />
       <Footer />
