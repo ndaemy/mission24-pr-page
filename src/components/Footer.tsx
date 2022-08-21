@@ -1,10 +1,9 @@
-import type { Slug } from "types";
-
 import { Flex, Grid, HStack, Text, VStack } from "@chakra-ui/react";
 import type { FC, ReactNode } from "react";
 
 import IcInstagram from "~/components/styledSvgs/IcInstagram";
 import { colors } from "~/theme/customTheme";
+import type { Slug } from "~/types";
 
 export const footerHeight = "120px";
 
