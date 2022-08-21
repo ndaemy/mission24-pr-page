@@ -1,4 +1,5 @@
 import { Box, Button, Heading } from "@chakra-ui/react";
+import { useRouter } from "next/router";
 import type { FC } from "react";
 
 import Letter from "~/images/letter.svg";
@@ -7,6 +8,12 @@ import Logo from "~/images/logo_w.svg";
 import SectionLayout from "./SectionLayout";
 
 const StartSection: FC = () => {
+  const router = useRouter();
+
+  const onClickAcceptButton = () => {
+    router.replace("/#information");
+  };
+
   return (
     <SectionLayout gap="12px" id="start">
       <Box height={["24px", "36px", "48px"]} mb="18px">
@@ -29,6 +36,7 @@ const StartSection: FC = () => {
         size="lg"
         p="8px 22px"
         borderRadius="50px"
+        onClick={onClickAcceptButton}
       >
         초대 수락
       </Button>
