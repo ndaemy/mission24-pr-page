@@ -1,17 +1,29 @@
-import { Box, Button, Heading } from "@chakra-ui/react";
+import { Box, Button, Heading, useMediaQuery } from "@chakra-ui/react";
 import { useRouter } from "next/router";
-import type { FC } from "react";
+import { type FC, useState } from "react";
 
+import AuditModal from "~/components/Modals/AuditModal";
 import Letter from "~/images/letter.svg";
 import Logo from "~/images/logo_w.svg";
 
 import SectionLayout from "./SectionLayout";
 
 const StartSection: FC = () => {
+  const [isAuditModalOpen, setIsAuditModalOpen] = useState(false);
+  const [isLargetThan1024] = useMediaQuery("(min-width: 1024px)");
+
   const router = useRouter();
 
   const onClickAcceptButton = () => {
     router.replace("/#information");
+  };
+
+  const onClickAudit = () => {
+    setIsAuditModalOpen(true);
+  };
+
+  const onCloseAuditModal = () => {
+    setIsAuditModalOpen(false);
   };
 
   return (
@@ -40,6 +52,14 @@ const StartSection: FC = () => {
       >
         초대 수락
       </Button>
+      {!isLargetThan1024 && (
+        <Box>
+          <Button bgColor="rgba(249, 226, 185, 0.65)" onClick={onClickAudit}>
+            👥 MISSION 24 현장 참여하기
+          </Button>
+        </Box>
+      )}
+      {isAuditModalOpen && <AuditModal onClose={onCloseAuditModal} />}
     </SectionLayout>
   );
 };

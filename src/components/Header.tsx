@@ -4,6 +4,8 @@ import type { FC } from "react";
 
 import Logo from "~/images/logo_w.svg";
 
+export const headerHeight = "60px";
+
 const Header: FC = () => {
   const router = useRouter();
 
@@ -15,7 +17,7 @@ const Header: FC = () => {
     <Flex
       position="fixed"
       width="100vw"
-      height="60px"
+      height={headerHeight}
       backgroundColor="black"
       px={["24px", "36px"]}
       justifyContent="center"

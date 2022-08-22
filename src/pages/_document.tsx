@@ -15,6 +15,7 @@ const Document = () => {
       <body>
         <ColorModeScript initialColorMode={theme.config.initialColorMode} />
         <Main />
+        <div id="modal" />
         <NextScript />
       </body>
     </Html>
