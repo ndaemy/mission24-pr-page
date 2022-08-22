@@ -32,7 +32,7 @@ const StartSection: FC = () => {
         <Logo height="100%" />
       </Box>
       <Heading as="h1" size="md" fontWeight="bold" textAlign="center" lineHeight="36px">
-        한국외대 글로벌 X 명지대 X 한양대 에리카 X 을지대
+        명지대 X 을지대 X 한국외대 글로벌 X 한양대 에리카
         <br />
         연합 해커톤
       </Heading>
