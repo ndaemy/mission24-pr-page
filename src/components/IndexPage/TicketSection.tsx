@@ -40,7 +40,7 @@ const TicketSection: FC = () => {
         overflow="scroll"
       >
         {univInfo.map(({ slug, univName }) => (
-          <Box position="relative">
+          <Box key={slug} position="relative">
             <Text
               as="div"
               position="absolute"
