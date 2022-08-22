@@ -5,9 +5,20 @@ import IcInstagram from "~/components/styledSvgs/IcInstagram";
 import { univInfo } from "~/constants";
 import { colors } from "~/theme/customTheme";
 
-export const footerHeight = "120px";
+export const footerHeight = "144px";
 
-const people = ["고도희", "박소연", "백승찬", "유예빈", "임연수", "임은영", "정우진", "최준형"];
+const people = [
+  "고도희",
+  "김송하",
+  "박소연",
+  "백승찬",
+  "유예빈",
+  "임연수",
+  "임은영",
+  "정우진",
+  "정지원",
+  "최준형",
+];
 
 type FooterBlockProps = {
   title: string;
