@@ -6,7 +6,7 @@ import AuditModal from "~/components/Modals/AuditModal";
 
 const Shortcut: FC = () => {
   const [isAuditModalOpen, setIsAuditModalOpen] = useState(false);
-  const [isLargetThan1024] = useMediaQuery("(min-width: 1024px)");
+  const [isLargerThan1024] = useMediaQuery("(min-width: 1024px)");
 
   const onClickAudit = () => {
     setIsAuditModalOpen(true);
@@ -16,7 +16,7 @@ const Shortcut: FC = () => {
     setIsAuditModalOpen(false);
   };
 
-  return isLargetThan1024 ? (
+  return isLargerThan1024 ? (
     <Box position="fixed" top={`calc(${headerHeight} + 48px)`} right="24px">
       <Box>
         <Button bgColor="rgba(249, 226, 185, 0.65)" onClick={onClickAudit}>

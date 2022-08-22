@@ -10,7 +10,7 @@ import SectionLayout from "./SectionLayout";
 
 const StartSection: FC = () => {
   const [isAuditModalOpen, setIsAuditModalOpen] = useState(false);
-  const [isLargetThan1024] = useMediaQuery("(min-width: 1024px)");
+  const [isLargerThan1024] = useMediaQuery("(min-width: 1024px)");
 
   const router = useRouter();
 
@@ -52,7 +52,7 @@ const StartSection: FC = () => {
       >
         초대 수락
       </Button>
-      {!isLargetThan1024 && (
+      {!isLargerThan1024 && (
         <Box>
           <Button bgColor="rgba(249, 226, 185, 0.65)" onClick={onClickAudit}>
             👥 MISSION 24 현장 참여하기
