@@ -38,6 +38,7 @@ const AuditModal: FC<AuditModalProps> = ({ onClose }) => {
     try {
       await axios.post("/api/auditors", { data });
       toast("성공적으로 등록되었습니다.");
+      onClose();
     } catch (e) {
       console.error(e);
       if (e instanceof AxiosError) {
