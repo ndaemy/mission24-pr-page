@@ -20,6 +20,7 @@ const StyledLogo = styled(Logo)`
 type Inputs = {
   name: string;
   email: string;
+  confirm: boolean;
 };
 
 type AuditModalProps = {
@@ -30,6 +31,9 @@ const AuditModal: FC<AuditModalProps> = ({ onClose }) => {
   const { register, handleSubmit } = useForm<Inputs>();
 
   const onSubmit: SubmitHandler<Inputs> = async data => {
+    if (!data.confirm) {
+      toast.warn("안내사항을 체크하셔야 합니다!");
+    }
     try {
       await axios.post("/api/auditors", { data });
       toast("성공적으로 등록되었습니다.");
@@ -63,9 +67,9 @@ const AuditModal: FC<AuditModalProps> = ({ onClose }) => {
           <Text fontSize="2xl">경기 남부 연합 해커톤 참관 신청</Text>
           <form onSubmit={handleSubmit(onSubmit)}>
             <VStack spacing={4} w="calc(100vw - 48px)" maxW="340px">
-              <Input placeholder="이름" {...register("name")} />
-              <Input placeholder="이메일" {...register("email")} />
-              <Checkbox>
+              <Input placeholder="이름" {...register("name", { required: true })} />
+              <Input placeholder="이메일" {...register("email", { required: true })} />
+              <Checkbox {...register("confirm")}>
                 참관 가능 시간은 8월 28일 오전 9시부터 11시입니다. 이 점을 인지하셨나요?
               </Checkbox>
               <Button
