@@ -27,12 +27,24 @@ const Animation = styled.div`
     top: 0;
     left: 0;
     transition: opacity 1s;
-    transition-delay: 1s;
+    transition-delay: 0.5s;
     opacity: 0;
   }
 
   .appear {
     opacity: 1;
+  }
+`;
+
+const UnivTickets = styled(HStack)`
+  .transparent {
+    transition: opacity 1s;
+    opacity: 0.5;
+  }
+
+  .disapper {
+    transition: opacity 1s;
+    opacity: 0;
   }
 `;
 
@@ -154,7 +166,7 @@ const TicketSection: FC = () => {
           <Box w="calc(100vw - 48px)" maxW="340px" h="260px" />
         )}
       </Animation>
-      <HStack
+      <UnivTickets
         spacing={4}
         mt="24px"
         px="24px"
@@ -162,7 +174,14 @@ const TicketSection: FC = () => {
         overflow="scroll"
       >
         {univInfo.map(({ slug, univName }) => (
-          <Box key={slug} position="relative">
+          <Box
+            key={slug}
+            className={
+              // eslint-disable-next-line no-nested-ternary
+              disappear ? (participantUnivSlug === slug ? "disapper" : "transparent") : undefined
+            }
+            position="relative"
+          >
             <Text
               as="div"
               position="absolute"
@@ -176,7 +195,7 @@ const TicketSection: FC = () => {
             <BlackTicket color={colors.mission24.univ[slug]} />
           </Box>
         ))}
-      </HStack>
+      </UnivTickets>
     </SectionLayout>
   );
 };
