@@ -1,6 +1,5 @@
-import { Box, Button, Checkbox, HStack, Input, Text, VStack } from "@chakra-ui/react";
+import { Box, Button, HStack, Input, Text, Textarea, VStack } from "@chakra-ui/react";
 import styled from "@emotion/styled";
-import { AxiosError } from "axios";
 import type { FC } from "react";
 import { type SubmitHandler, useForm } from "react-hook-form";
 import { toast } from "react-toastify";
@@ -13,41 +12,31 @@ import Logo from "~/images/logo_w.svg";
 import type { ModalProps } from "./types";
 
 const StyledLogo = styled(Logo)`
-  height: 24px;
+  height: 14px;
 
   @media (min-width: 30em) {
-    height: 36px;
+    height: 24px;
   }
 `;
 
 type Inputs = {
   name: string;
-  email: string;
-  confirm: boolean;
+  phone: string;
+  message: string;
 };
 
-type AuditModalProps = ModalProps;
+type CheerUpModalProps = ModalProps;
 
-const AuditModal: FC<AuditModalProps> = ({ onClose }) => {
+const CheerUpModal: FC<CheerUpModalProps> = ({ onClose }) => {
   const { register, handleSubmit } = useForm<Inputs>();
 
   const onSubmit: SubmitHandler<Inputs> = async data => {
-    if (!data.confirm) {
-      toast.warn("안내사항을 체크하셔야 합니다!");
-      return;
-    }
     try {
-      await axios.post("/api/auditors", { data });
-      toast("성공적으로 등록되었습니다.");
+      await axios.post("/api/cheer-up-messages", { data });
+      toast("응원해주셔서 감사합니다!");
       onClose();
     } catch (e) {
       console.error(e);
-      if (e instanceof AxiosError) {
-        if (e.response?.data.error.message === "This attribute must be unique") {
-          toast.error("이미 등록된 참관자입니다.");
-          return;
-        }
-      }
       toast.error("요청이 정상적으로 마무리되지 않았습니다.");
     }
   };
@@ -68,19 +57,35 @@ const AuditModal: FC<AuditModalProps> = ({ onClose }) => {
         />
         <VStack alignItems="center" gap="8px">
           <HStack>
+            <Text fontSize={["18px", "32px"]} lineHeight={["18px", "32px"]}>
+              💌
+            </Text>
             <StyledLogo display="inline" />
-            <Text fontSize={["36px", "48px"]} lineHeight={["36px", "48px"]}>
-              HERO,
+            <Text fontSize={["18px", "32px"]} lineHeight={["18px", "32px"]}>
+              응원하기
             </Text>
           </HStack>
-          <Text fontSize="2xl">경기 남부 연합 해커톤 참관 신청</Text>
+          <Text fontSize="md" textAlign="center">
+            아기사자에게 힘을 실어줄 멋쟁이 선배 사자를 구합니다 🤗
+            <br />
+            <br />
+            💸 소정의 후원금 전달은?
+            <br />
+            우리은행 1002-246-511299 (예금주: 백승찬)
+            <br />
+            <br />
+            ⬇️ 응원 메세지 전달
+          </Text>
+          <Text color="rgba(113, 128, 150, 0.8)">* 개인정보는 명단 취합 후 폐기될 예정입니다.</Text>
           <form onSubmit={handleSubmit(onSubmit)}>
             <VStack spacing={4} w="calc(100vw - 48px)" maxW="340px">
               <Input placeholder="이름" {...register("name", { required: true })} />
-              <Input placeholder="이메일" {...register("email", { required: true })} />
-              <Checkbox {...register("confirm")}>
-                참관 가능 시간은 8월 28일 오전 9시부터 11시입니다. 이 점을 인지하셨나요?
-              </Checkbox>
+              <Input placeholder="전화번호 (선택)" {...register("phone")} />
+              <Textarea
+                placeholder="응원의 한마디를 적어주세요!"
+                resize="vertical"
+                {...register("message", { required: true })}
+              />
               <Button
                 type="submit"
                 background="mission24.main.800"
@@ -90,7 +95,7 @@ const AuditModal: FC<AuditModalProps> = ({ onClose }) => {
                 w="140px"
                 borderRadius="50px"
               >
-                신청
+                응원해요!
               </Button>
             </VStack>
           </form>
@@ -100,4 +105,4 @@ const AuditModal: FC<AuditModalProps> = ({ onClose }) => {
   );
 };
 
-export default AuditModal;
+export default CheerUpModal;

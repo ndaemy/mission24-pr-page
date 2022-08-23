@@ -1,22 +1,27 @@
 import { Button, VStack } from "@chakra-ui/react";
 import { type FC, useState } from "react";
-import { toast } from "react-toastify";
 
 import AuditModal from "~/components/Modals/AuditModal";
+import CheerUpModal from "~/components/Modals/CheerUpModal";
 
 const ResponsiveButtons: FC = () => {
   const [isAuditModalOpen, setIsAuditModalOpen] = useState(false);
+  const [isCheerUpModalOpen, setIsCheerUpModalOpen] = useState(false);
 
   const onClickAuditButton = () => {
     setIsAuditModalOpen(true);
   };
 
   const onClickCheerUpButton = () => {
-    toast.warn("아직 준비중인 기능이에요.. 😭");
+    setIsCheerUpModalOpen(true);
   };
 
   const onCloseAuditModal = () => {
     setIsAuditModalOpen(false);
+  };
+
+  const onCloseCheerUpModal = () => {
+    setIsCheerUpModalOpen(false);
   };
 
   return (
@@ -30,6 +35,7 @@ const ResponsiveButtons: FC = () => {
         </Button>
       </VStack>
       {isAuditModalOpen && <AuditModal onClose={onCloseAuditModal} />}
+      {isCheerUpModalOpen && <CheerUpModal onClose={onCloseCheerUpModal} />}
     </>
   );
 };
