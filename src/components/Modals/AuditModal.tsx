@@ -1,5 +1,6 @@
 import { Box, Button, Checkbox, HStack, Input, Text, VStack } from "@chakra-ui/react";
 import styled from "@emotion/styled";
+import { AxiosError } from "axios";
 import type { FC } from "react";
 import { type SubmitHandler, useForm } from "react-hook-form";
 import { toast } from "react-toastify";
@@ -39,6 +40,12 @@ const AuditModal: FC<AuditModalProps> = ({ onClose }) => {
       toast("성공적으로 등록되었습니다.");
     } catch (e) {
       console.error(e);
+      if (e instanceof AxiosError) {
+        if (e.response?.data.error.message === "This attribute must be unique") {
+          toast.error("이미 등록된 참관자입니다.");
+          return;
+        }
+      }
       toast.error("요청이 정상적으로 마무리되지 않았습니다.");
     }
   };
