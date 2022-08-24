@@ -22,15 +22,15 @@ const StartSection: FC = () => {
       <Box height={["24px", "36px", "48px"]} mb="18px">
         <Logo height="100%" />
       </Box>
-      <Heading as="h1" size="md" fontWeight="bold" textAlign="center" lineHeight="36px">
+      <Heading as="h1" size={["sm", "md"]} fontWeight="bold" textAlign="center" lineHeight="36px">
         명지대 X 을지대 X 한국외대 글로벌 X 한양대 에리카
         <br />
         연합 해커톤
       </Heading>
-      <Heading as="h2" size="md" fontWeight="bold" lineHeight="36px">
       <Box w={["180px", "240px"]}>
         <Letter width="100%" />
       </Box>
+      <Heading as="h2" size={["sm", "md"]} fontWeight="bold" lineHeight="36px">
         INVITATION LETTER
         <br />
         2022.08.27 MARU180 EVENT HALL

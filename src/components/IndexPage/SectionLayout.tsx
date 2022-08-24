@@ -20,6 +20,7 @@ const SectionLayout: FC<SectionLayoutProps> = ({ gap, id, lastSection = false, c
       height={lastSection ? `calc(100vh - ${footerHeight})` : "100vh"}
       gap={gap}
       textAlign="center"
+      px="24px"
     >
       {children}
     </Flex>

@@ -170,7 +170,7 @@ const TicketSection: FC = () => {
         spacing={4}
         mt="24px"
         px="24px"
-        width={isLargerThan656 ? "auto" : "100%"}
+        width={isLargerThan656 ? "auto" : "100vw"}
         overflow="scroll"
       >
         {univInfo.map(({ slug, univName }) => (

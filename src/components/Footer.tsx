@@ -36,7 +36,13 @@ const FooterBlock: FC<FooterBlockProps> = ({ title, children }) => {
 
 const Footer: FC = () => {
   return (
-    <Flex width="100vw" height={footerHeight} px={["24px", "36px"]} justifyContent="center">
+    <Flex
+      width="100vw"
+      height={footerHeight}
+      px={["24px", "36px"]}
+      pb={["48px", "0"]}
+      justifyContent="center"
+    >
       <Flex justifyContent="space-around" alignItems="center" maxWidth="1140px" width="100%">
         <FooterBlock title="People">
           <Grid templateColumns={["repeat(2, 1fr)", "repeat(4, 1fr)"]}>
