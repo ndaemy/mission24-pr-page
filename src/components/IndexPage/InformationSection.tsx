@@ -64,7 +64,9 @@ const InformationSection: FC = () => {
               <Text>{timeBlock.duration}</Text>
             </Flex>
           ))}
-          <Text fontSize="xs">* MISSION 24 해커톤에서는 현장에서 배포를 요구하지 않습니다.</Text>
+          <Text fontSize="xs" w="calc(100vw - 48px)" maxW="440px" textAlign="left">
+            * MISSION 24 현장에서는 배포 이전 단계까지만 구현하여 결과물 전시회를 진행할 예정입니다.
+          </Text>
         </VStack>
       </SectionLayout>
     </>
