@@ -15,25 +15,27 @@ const FAQSection: FC = () => {
   return (
     <SectionLayout gap="12px" id="faqs">
       <SubTitle>자주 묻는 질문</SubTitle>
-      {data?.data.map(({ id, attributes: faq }) => (
-        <div key={id}>
-          <Box textAlign="left" mb="12px">
-            <Text fontSize="lg">Q: {faq.question}</Text>
-            <Text
-              whiteSpace="pre-line"
-              mt="8px"
-              ml="12px"
-              borderLeft="1px solid gray"
-              py="2px"
-              pl="8px"
-              lineHeight={1.6}
-            >
-              {faq.answer}
-            </Text>
-          </Box>
-          <Divider />
-        </div>
-      ))}
+      <Box textAlign="left" maxW="440px">
+        {data?.data.map(({ id, attributes: faq }) => (
+          <div key={id}>
+            <Box my="12px">
+              <Text fontSize="lg">Q: {faq.question}</Text>
+              <Text
+                whiteSpace="pre-line"
+                mt="8px"
+                ml="12px"
+                borderLeft="1px solid gray"
+                py="2px"
+                pl="8px"
+                lineHeight={1.6}
+              >
+                {faq.answer}
+              </Text>
+            </Box>
+            <Divider />
+          </div>
+        ))}
+      </Box>
     </SectionLayout>
   );
 };
