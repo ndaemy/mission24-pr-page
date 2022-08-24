@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 import type { FC } from "react";
 
 import ResponsiveButtons from "~/components/IndexPage/ResponsiveButtons";
-import Letter from "~/images/letter.svg";
+import Letter from "~/images/letter_white.svg";
 import Logo from "~/images/logo_w.svg";
 
 import SectionLayout from "./SectionLayout";
@@ -27,8 +27,10 @@ const StartSection: FC = () => {
         <br />
         연합 해커톤
       </Heading>
-      <Letter width="240px" />
       <Heading as="h2" size="md" fontWeight="bold" lineHeight="36px">
+      <Box w={["180px", "240px"]}>
+        <Letter width="100%" />
+      </Box>
         INVITATION LETTER
         <br />
         2022.08.27 MARU180 EVENT HALL
