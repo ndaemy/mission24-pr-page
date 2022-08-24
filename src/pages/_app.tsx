@@ -4,11 +4,16 @@ import { useRouter } from "next/router";
 import Script from "next/script";
 import { useEffect } from "react";
 import { Slide, ToastContainer } from "react-toastify";
+import { SWRConfig } from "swr";
+
 import "react-toastify/dist/ReactToastify.css";
 
+import axios from "~/api/axios";
 import * as gtag from "~/lib/gtag";
 import Fonts from "~/theme/Fonts";
 import theme from "~/theme/customTheme";
+
+const fetcher = (url: string) => axios.get(url).then(res => res.data);
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
   const router = useRouter();
@@ -46,7 +51,13 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
       />
       <ChakraProvider resetCSS theme={theme}>
         <Fonts />
-        <Component {...pageProps} />
+        <SWRConfig
+          value={{
+            fetcher,
+          }}
+        >
+          <Component {...pageProps} />
+        </SWRConfig>
         <ToastContainer
           position="bottom-center"
           autoClose={3000}

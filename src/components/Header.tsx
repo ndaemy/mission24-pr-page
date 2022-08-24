@@ -38,7 +38,7 @@ const Header: FC = () => {
             <Button variant="ghost" onClick={onClickSectionButton("ticket")}>
               Ticket
             </Button>
-            <Button variant="ghost" onClick={onClickSectionButton("faq")}>
+            <Button variant="ghost" onClick={onClickSectionButton("faqs")}>
               FAQ
             </Button>
           </Flex>
