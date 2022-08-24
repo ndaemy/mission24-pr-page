@@ -26,7 +26,7 @@ const Header: FC = () => {
       zIndex={10}
     >
       <Flex justifyContent="space-between" alignItems="center" maxWidth="1140px" width="100%">
-        <Logo height="16px" />
+        <Logo height="16px" onClick={onClickSectionButton("start")} style={{ cursor: "pointer" }} />
         {isLargerThan620 && (
           <Flex gap={["12px", "24px"]}>
             <Button variant="ghost" onClick={onClickSectionButton("start")}>
