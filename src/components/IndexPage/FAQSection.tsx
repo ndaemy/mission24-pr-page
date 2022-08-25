@@ -27,7 +27,7 @@ const FAQSection: FC = () => {
   return (
     <SectionLayout gap="12px" id="faqs">
       <SubTitle>자주 묻는 질문</SubTitle>
-      <StyledBox textAlign="left" w="100%">
+      <StyledBox textAlign="left" w="100%" maxW="768px">
         {data?.data.map(({ id, attributes: faq }) => (
           <div key={id}>
             <Box my="12px">

@@ -46,7 +46,14 @@ const CheerUpSection: FC = () => {
   return (
     <SectionLayout gap="12px" id="cheer-up">
       <SubTitle>{data?.meta.pagination.total}명이 응원하고 있어요!</SubTitle>
-      <VStack w="calc(100% - 48px)" gap="8px" h="379px" overflow="hidden" ref={scrollBoxRef}>
+      <VStack
+        w="calc(100% - 48px)"
+        maxW="768px"
+        gap="8px"
+        h="379px"
+        overflow="hidden"
+        ref={scrollBoxRef}
+      >
         {data?.data.map(({ id, attributes: { name, message } }) => (
           <Box
             key={id}
