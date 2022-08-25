@@ -2,6 +2,7 @@ import type { NextPage } from "next";
 
 import Footer from "~/components/Footer";
 import Header from "~/components/Header";
+import CheerUpSection from "~/components/IndexPage/CheerUpSection";
 import FAQSection from "~/components/IndexPage/FAQSection";
 import InformationSection from "~/components/IndexPage/InformationSection";
 import ShareSection from "~/components/IndexPage/ShareSection";
@@ -20,6 +21,7 @@ const Home: NextPage = () => {
       <TicketSection />
       <SponsorSection />
       <FAQSection />
+      <CheerUpSection />
       <ShareSection />
       <Footer />
     </>
