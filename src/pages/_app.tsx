@@ -1,5 +1,6 @@
 import { ChakraProvider } from "@chakra-ui/react";
 import type { AppProps } from "next/app";
+import Head from "next/head";
 import { useRouter } from "next/router";
 import Script from "next/script";
 import { useEffect } from "react";
@@ -31,6 +32,9 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
 
   return (
     <>
+      <Head>
+        <title>Mission24</title>
+      </Head>
       <Script
         strategy="afterInteractive"
         src={`https://www.googletagmanager.com/gtag/js?id=${gtag.GA_TRACKING_ID}`}
