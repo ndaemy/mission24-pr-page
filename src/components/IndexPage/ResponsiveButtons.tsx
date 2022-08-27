@@ -33,6 +33,9 @@ const ResponsiveButtons: FC = () => {
         <Button w="240px" bgColor="rgba(249, 226, 185, 0.65)" onClick={onClickCheerUpButton}>
           💌 MISSION 24 응원하기
         </Button>
+        <Button w="240px" bgColor="rgba(249, 226, 185, 0.65)">
+          <a href="https://vote.mission24.link/">🗳 MISSION 24 투표하기</a>
+        </Button>
       </VStack>
       {isAuditModalOpen && <AuditModal onClose={onCloseAuditModal} />}
       {isCheerUpModalOpen && <CheerUpModal onClose={onCloseCheerUpModal} />}
