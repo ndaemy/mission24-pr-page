@@ -34,7 +34,7 @@ const ResponsiveButtons: FC = () => {
           💌 MISSION 24 응원하기
         </Button>
         <Button w="240px" bgColor="rgba(249, 226, 185, 0.65)">
-          <a href="https://mission24.herokuapp.com/" target="_blank">
+          <a href="https://mission24.herokuapp.com/" target="_blank" rel="noreferrer">
             🗳 MISSION 24 투표하기
           </a>
         </Button>
