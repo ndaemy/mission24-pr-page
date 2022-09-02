@@ -36,7 +36,6 @@ const CheerUpModal: FC<CheerUpModalProps> = ({ onClose }) => {
       toast("응원해주셔서 감사합니다!");
       onClose();
     } catch (e) {
-      console.error(e);
       toast.error("요청이 정상적으로 마무리되지 않았습니다.");
     }
   };

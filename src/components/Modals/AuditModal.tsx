@@ -41,7 +41,6 @@ const AuditModal: FC<AuditModalProps> = ({ onClose }) => {
       toast("성공적으로 등록되었습니다.");
       onClose();
     } catch (e) {
-      console.error(e);
       if (e instanceof AxiosError) {
         if (e.response?.data.error.message === "This attribute must be unique") {
           toast.error("이미 등록된 참관자입니다.");

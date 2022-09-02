@@ -85,13 +85,11 @@ const TicketSection: FC = () => {
         toast.warn("해당 이름과 이메일 조합을 가지는 참가자를 찾지 못했습니다. 다시 시도해주세요.");
         return;
       }
-      console.log(res.data.data[0]);
       setParticipantName(res.data.data[0].attributes.name);
       setParticipantUnivName(res.data.data[0].attributes.univ);
       setParticipantUnivSlug(getUnivSlug(res.data.data[0].attributes.univ));
       setDisappear(true);
     } catch (e) {
-      console.error(e);
       toast.error("응답이 정상적이지 않습니다.");
     }
   };
