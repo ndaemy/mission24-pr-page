@@ -1,4 +1,5 @@
 import { Button, VStack } from "@chakra-ui/react";
+import Link from "next/link";
 import { type FC, useState } from "react";
 
 import AuditModal from "~/components/Modals/AuditModal";
@@ -33,10 +34,14 @@ const ResponsiveButtons: FC = () => {
         <Button w="240px" bgColor="rgba(249, 226, 185, 0.65)" onClick={onClickCheerUpButton}>
           💌 MISSION 24 응원하기
         </Button>
+        {/* 투표 기간이 끝났으므로 파기 */}
+        {/* <Button w="240px" bgColor="rgba(249, 226, 185, 0.65)"> */}
+        {/*   <a href="https://mission24.herokuapp.com/" target="_blank" rel="noreferrer"> */}
+        {/*     🗳 MISSION 24 투표하기 */}
+        {/*   </a> */}
+        {/* </Button> */}
         <Button w="240px" bgColor="rgba(249, 226, 185, 0.65)">
-          <a href="https://mission24.herokuapp.com/" target="_blank" rel="noreferrer">
-            🗳 MISSION 24 투표하기
-          </a>
+          <Link href="/ranking">🏆 MISSION 24 결과 보러가기</Link>
         </Button>
       </VStack>
       {isAuditModalOpen && <AuditModal onClose={onCloseAuditModal} />}
