@@ -1,7 +1,5 @@
 import type { NextPage } from "next";
 
-import Footer from "~/components/Footer";
-import Header from "~/components/Header";
 import CheerUpSection from "~/components/IndexPage/CheerUpSection";
 import FAQSection from "~/components/IndexPage/FAQSection";
 import InformationSection from "~/components/IndexPage/InformationSection";
@@ -14,7 +12,6 @@ import TicketSection from "~/components/IndexPage/TicketSection";
 const Home: NextPage = () => {
   return (
     <>
-      <Header />
       <Shortcut />
       <StartSection />
       <InformationSection />
@@ -23,7 +20,6 @@ const Home: NextPage = () => {
       <FAQSection />
       <CheerUpSection />
       <ShareSection />
-      <Footer />
     </>
   );
 };

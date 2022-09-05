@@ -10,6 +10,8 @@ import { SWRConfig } from "swr";
 import "react-toastify/dist/ReactToastify.css";
 
 import axios from "~/api/axios";
+import Footer from "~/components/Footer";
+import Header from "~/components/Header";
 import * as gtag from "~/lib/gtag";
 import Fonts from "~/theme/Fonts";
 import theme from "~/theme/customTheme";
@@ -60,7 +62,9 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
             fetcher,
           }}
         >
+          <Header />
           <Component {...pageProps} />
+          <Footer />
         </SWRConfig>
         <ToastContainer
           position="bottom-center"
