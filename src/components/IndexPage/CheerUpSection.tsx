@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import type { FC } from "react";
 import useSWR from "swr";
 
+import type { StrapiResponse } from "~/api/responseTypes";
 import SectionLayout from "~/components/IndexPage/SectionLayout";
 import SubTitle from "~/components/SubTitle";
 
@@ -12,10 +13,7 @@ const CheerUpSection: FC = () => {
   const [curTopIndex, setCurTopIndex] = useState(0);
   const scrollBoxRef = useRef<HTMLDivElement>(null);
 
-  const { data } = useSWR<{
-    data: CheerUpMessage[];
-    meta: { pagination: { page: number; pageSize: number; pageCount: number; total: number } };
-  }>("/api/cheer-up-messages?sort=id:DESC");
+  const { data } = useSWR<StrapiResponse<CheerUpMessage[]>>("/api/cheer-up-messages?sort=id:DESC");
 
   useEffect(() => {
     let nextTopIndex = -1;
